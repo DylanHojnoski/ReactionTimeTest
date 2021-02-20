@@ -43,6 +43,7 @@ function stop() {
             bestTime = reactionTime;
             document.getElementById("bestTime").innerHTML = "Best time is " + bestTime + " milliseconds";
         }
+        start = false;
     }
 }
 
@@ -50,5 +51,4 @@ function tryAgain()
 {
     document.getElementById("result").style.display = "none";
     document.getElementById("circle").style.backgroundColor = "#27f063";
-    start = false;
 }
