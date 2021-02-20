@@ -18,6 +18,7 @@ header p {
 
 .container {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -53,9 +54,10 @@ header p {
     display: none;
     position: absolute;
     background-color: #636161;
-    width: 400px;
-    height: 200px;
+    max-width: 400px;
+    max-height: 200px;
     border-radius: 20px;
+    padding: 10px;
 
 }
 
@@ -68,8 +70,8 @@ header p {
     display: flex;
     border: none;
     background-color: #5486be;
-    width: 100px;
-    height: 80px;
+    max-width: 100px;
+    max-height: 80px;
     border-radius: 20px;
     padding: 20px;
     font-size: 20px;
@@ -79,3 +81,16 @@ header p {
     position: relative;
     justify-content: center;
 }
+
+@media only screen and (max-width: 450px) {
+
+    header h1 {
+        font-size: 50px;
+    }
+    
+    header p {
+        font-size: 20px;
+    }
+
+}
+
