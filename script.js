@@ -6,6 +6,7 @@ var bestTime;
 
 function onStart()
 {
+    document.getElementById("start").style.backgroundColor ="#3b5169"
     var time = (Math.random()* 3) +1; 
     var remainingTime = setInterval(function() {
 
@@ -57,4 +58,5 @@ function tryAgain()
 {
     document.getElementById("result").style.display = "none";
     document.getElementById("circle").style.backgroundColor = "#27f063";
+    document.getElementById("start").style.backgroundColor ="#5486be"
 }

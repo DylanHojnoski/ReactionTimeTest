@@ -24,7 +24,7 @@ header p {
     align-items: center;
 }
 
-.start {
+#start {
     background-color: #5486be;
     border-radius: 20px;
     border: none;
