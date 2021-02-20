@@ -6,8 +6,7 @@ var bestTime;
 
 function onStart()
 {
-    start =true;
-    var time = (Math.random()* 5) +1; 
+    var time = (Math.random()* 3) +1; 
     var remainingTime = setInterval(function() {
 
         time--;
@@ -20,6 +19,7 @@ function onStart()
 }
 
 function colorChange() {
+    start = true;
     document.getElementById("circle").style.backgroundColor = "#f02727";
     date = new Date();
     startTime = date.getTime();
@@ -28,21 +28,27 @@ function colorChange() {
 function stop() {
     if(start == true)
     {
-        date = new Date();
-        endTime = date.getTime();
-        var reactionTime = endTime - startTime;
-        document.getElementById("reactionTime").innerHTML = "Your reaction time is " + reactionTime + " milliseconds";
+            date = new Date();
+            endTime = date.getTime();
+            var reactionTime = endTime - startTime;
+            document.getElementById("reactionTime").innerHTML = "Your reaction time is " + reactionTime + " milliseconds";
+            document.getElementById("result").style.display = "block";
+            if(reactionTime < bestTime)
+            {
+                bestTime = reactionTime;
+                document.getElementById("bestTime").innerHTML = "Best time is " + bestTime + " milliseconds";
+            }
+            else if(bestTime == null)
+            {
+                bestTime = reactionTime;
+                document.getElementById("bestTime").innerHTML = "Best time is " + bestTime + " milliseconds";
+            }
+            start = false;
+    }
+    else
+    {
+        document.getElementById("reactionTime").innerHTML = "You clicked too fast";
         document.getElementById("result").style.display = "block";
-        if(reactionTime < bestTime)
-        {
-            bestTime = reactionTime;
-            document.getElementById("bestTime").innerHTML = "Best time is " + bestTime + " milliseconds";
-        }
-        else if(bestTime == null)
-        {
-            bestTime = reactionTime;
-            document.getElementById("bestTime").innerHTML = "Best time is " + bestTime + " milliseconds";
-        }
         start = false;
     }
 }
